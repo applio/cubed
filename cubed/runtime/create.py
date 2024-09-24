@@ -18,6 +18,10 @@ def create_executor(name: str, executor_options: Optional[dict] = None) -> Execu
         from cubed.runtime.executors.dask import DaskExecutor
 
         return DaskExecutor(**executor_options)
+    elif name == "dragon":
+        from .executors.dragon import DragonExecutor
+
+        return DragonExecutor(**executor_options)
     elif name == "lithops":
         from cubed.runtime.executors.lithops import LithopsExecutor
 
